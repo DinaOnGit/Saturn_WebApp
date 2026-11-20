@@ -1,0 +1,79 @@
+/* base.css · SHARED BY EVERYONE */
+
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Colours */
+  --surface-space: #0B0E13;      /* page background */
+  --surface-card: #12161D;       /* panels: post box, top tags, menus, welcome card */
+  --surface-raised: #1A202B;     /* hover, inputs on cards */
+  --border-subtle: #1B212B;      /* lines between posts, header line */
+  --border-default: #232A35;     /* panel edges */
+  --border-strong: #2A3240;      /* buttons, inputs, pills */
+  --text-primary: #E9EDF2;       /* headings, names */
+  --text-body: #E1E6EC;          /* post text */
+  --text-soft: #C9D1DC;          /* tag labels, secondary text on panels */
+  --text-muted: #8B95A3;         /* @handle, time, counts */
+  --accent-orange: #F6A672;      /* main actions: Launch, Connect your GitHub, likes, links */
+  --accent-orange-soft: #FFD2B4; /* rocket flame */
+  --accent-purple: #B79CFF;      /* #FED28, focus ring */
+  --accent-green: #74CF96;       /* Feed online, new posts, fuel ring */
+  --accent-blue: #7DC0E8;        /* other tags */
+  --status-error: #F29AAE;       /* errors, "tag too long" */
+  --status-offline: #E5484D;     /* Feed offline dot */
+  --ink-on-orange: #160B04;      /* text on orange buttons */
+  --ink-on-green: #06140C;       /* text on green buttons */
+
+  /* Type: Onest, text styles 01–10 from Figma. Use: font: var(--type-05-name); */
+  --font: "Onest", system-ui, sans-serif;
+  --type-01-signin-title: 800 31px/36px var(--font);
+  --type-02-heading: 800 20px/24px var(--font);
+  --type-03-large-input: 400 20px/28px var(--font);
+  --type-04-tagline: 700 17px/22px var(--font);
+  --type-05-name: 700 15px/20px var(--font);
+  --type-06-body: 400 15px/20px var(--font);
+  --type-07-meta: 400 15px/20px var(--font);
+  --type-08-button: 700 15px/20px var(--font);
+  --type-09-small: 400 13px/18px var(--font);
+  --type-10-small-bold: 700 13px/18px var(--font);
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Corner radius */
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+  --radius-16: 16px;
+  --radius-26: 26px;
+  --radius-pill: 999px;
+}
+
+
+/* ---------- Body ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font: var(--type-06-body);
+  color: var(--text-body);
+}
+
+
+/* ---------- Starry background ----------
+   Space colour + two soft glows + the star tile on top.
+   The path starts with ../ because this file is in the css/ folder. */
+body {
+  background-color: var(--surface-space);
+  background-image:
+    url("../images/saturn-stars.svg"),                                                /* stars, tiled */
+    radial-gradient(700px 360px at 0% 0%, rgb(183 156 255 / .10), transparent 70%),   /* purple glow, top left */
+    radial-gradient(640px 340px at 100% 0%, rgb(116 207 150 / .07), transparent 70%); /* green glow, top right */
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-attachment: fixed;   /* the sky stays put while the page scrolls */
+}
