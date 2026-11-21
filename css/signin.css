@@ -1,2 +1,130 @@
 /* signin.css · Part 1 · Tai · Sign-in and its states
    Your CSS and your media queries go here. */
+
+   :root {
+      /* Tokens from the Figma file (Deep Space) */
+      --surface-space: #0b0e13;
+      --surface-card: #12161d;
+      --border-default: #232a35;
+      --border-strong: #2a3240;
+      --text-primary: #e9edf2;
+      --text-muted: #8b95a3;
+      --accent-orange: #f6a672;
+      --ink-on-orange: #160b04;
+      --space-12: 12px;
+      --radius-14: 14px;
+      --radius-26: 26px;
+      --font: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; }
+    
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text-primary);
+      font-family: var(--font);
+    }
+    
+    .page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+    }
+    
+    /* Welcome card: 34/34/30/34 padding, 410px content width => 478px card */
+    #signin {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 478px;
+      padding: 34px 34px 30px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-26);
+      box-shadow: 0 30px 40px rgba(0, 0, 0, 0.5);
+
+
+    }
+    
+    /* Saturn icon, 52x52 */
+    /* Animated loader SVG (rings orbit; honors prefers-reduced-motion internally) */
+    .saturn {
+      display: block;
+      flex: none;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 18px;
+    }
+    
+    .signin_title {
+      margin: 0 0 18px;
+      font-weight: 800;
+      font-size: 31px;
+      line-height: 36px;
+      letter-spacing: -0.62px;
+      color: var(--text-primary);
+    }
+    .signin_tagline {
+      margin: 0 0 8px;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 22px;
+      color: var(--text-primary);
+    }
+    .signin_meta {
+      margin: 0 0 18px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: var(--text-muted);
+    }
+    
+    .signin_actions {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-12);
+      width: 100%;
+    }
+    
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 15px 18px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-14);
+      font-family: var(--font);
+      text-align: left;
+      cursor: pointer;
+      transition: filter 0.15s ease, transform 0.05s ease, border-color 0.15s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
+    
+    .btn--primary {
+      background: var(--accent-orange);
+      border-color: var(--accent-orange);
+      color: var(--ink-on-orange);
+    }
+    .btn--primary:hover { filter: brightness(1.05); }
+    
+    .btn--secondary {
+      background: var(--surface-space);
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+    }
+    .btn--secondary:hover { border-color: var(--text-muted); }
+    
+    .btn__icon { flex: none; width: 26px; height: 26px; display: block; }
+    .btn__text { display: flex; flex-direction: column; gap: 2px; }
+    .btn__title { font-weight: 700; font-size: 15px; line-height: 22.5px; }
+    .btn__sub { font-weight: 400; font-size: 13px; line-height: 19.5px; opacity: 0.8; }
+    
+    @media (max-width: 520px) {
+      .signin { padding: 28px 20px 24px; }
+    }
+    
