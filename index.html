@@ -71,7 +71,11 @@
         <input class="username__input" id="github-username" name="username" type="text"
                autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"
                maxlength="39" aria-describedby="username-note">
-        <button type="submit" class="username__submit" id="find-me">Find me</button>
+        <button type="submit" class="username__submit" id="find-me">
+          <img class="username__spinner" src="images/saturn-loader.svg" alt="" width="20" height="20" hidden>
+          <span class="username__submit-label">Find me</span>
+        </button>
+
       </div>
       <p class="username__note" id="username-note" aria-live="polite"
          data-default="Saturn only reads your public GitHub name and profile photo.">
