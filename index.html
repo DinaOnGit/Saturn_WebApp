@@ -35,11 +35,11 @@
        css/signin.css + js/signin.js
        Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-4
        ========================================================= -->
-<main class="page">
+<main class="signin-page">
   <section id="signin">
     <!-- Tai: your HTML here -->
      
-    <img class="saturn" src="images/saturn-logo.svg" alt="Saturn" width="52" height="52">
+    <img class="signin-saturn" src="images/saturn-logo.svg" alt="Saturn" width="52" height="52">
     
       <h1 class="signin_title">Welcome to Saturn</h1>
       <p class="signin_tagline">The class feed of tomorrow.</p>
@@ -67,10 +67,9 @@
     <form class="username" id="view-username" hidden novalidate>
       <label class="username__label" for="github-username">GitHub username</label>
       <div class="username__field">
-        <span class="username__prefix">github.com/</span>
         <input class="username__input" id="github-username" name="username" type="text"
                autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"
-               maxlength="39" aria-describedby="username-note">
+               maxlength="39" aria-describedby="username-note" placeholder="github.com">
         <button type="submit" class="username__submit" id="find-me">Find me</button>
       </div>
       <p class="username__note" id="username-note" aria-live="polite"
