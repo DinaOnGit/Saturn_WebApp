@@ -67,9 +67,10 @@
     <form class="username" id="view-username" hidden novalidate>
       <label class="username__label" for="github-username">GitHub username</label>
       <div class="username__field">
+        <span class="username__prefix">github.com/</span>
         <input class="username__input" id="github-username" name="username" type="text"
                autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"
-               maxlength="39" aria-describedby="username-note" placeholder="github.com">
+               maxlength="39" aria-describedby="username-note">
         <button type="submit" class="username__submit" id="find-me">Find me</button>
       </div>
       <p class="username__note" id="username-note" aria-live="polite"
