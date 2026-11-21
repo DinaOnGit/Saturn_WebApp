@@ -87,6 +87,13 @@
       flex-direction: column;
       gap: var(--space-12);
       width: 100%;
+
+    } .signin_actions[hidden]{
+      display: none; 
+    }
+
+    .signin_actions[hidden] {
+       display: none; 
     }
     
     .btn {

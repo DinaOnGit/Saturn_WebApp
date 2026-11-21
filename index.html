@@ -47,7 +47,7 @@
 
     <div class="signin_actions">
       <button type="button" class="btn btn--primary" id="github-signin">
-        <img class="btn__icon" alt="github icon" id="git-icon" src="images/icon-github.svg">
+        <img class="btn__icon" alt="github icon" src="images/icon-github.svg">
         <span class="btn__text">
           <span class="btn__title">Connect your GitHub</span>
           <span class="btn__sub">Use your GitHub name and photo</span>
@@ -55,15 +55,33 @@
       </button>
 
       <button type="button" class="btn btn--secondary" id="anonymous-signin">
-        <img class="btn__icon" alt="Anonymous icon" id="anonymous-icon" src="images/icon-anonymous.svg">
+        <img class="btn__icon" alt="Anonymous icon" src="images/icon-anonymous.svg">
         <span class="btn__text">
           <span class="btn__title">Post anonymously</span>
           <span class="btn__sub">No name or photo, just Anonymous</span>
         </span>
       </button>
     </div>
+
+    <!-- View 2: GitHub username -->
+    <form class="username" id="view-username" hidden novalidate>
+      <label class="username__label" for="github-username">GitHub username</label>
+      <div class="username__field">
+        <span class="username__prefix">github.com/</span>
+        <input class="username__input" id="github-username" name="username" type="text"
+               autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"
+               maxlength="39" aria-describedby="username-note">
+        <button type="submit" class="username__submit" id="find-me">Find me</button>
+      </div>
+      <p class="username__note" id="username-note" aria-live="polite"
+         data-default="Saturn only reads your public GitHub name and profile photo.">
+        Saturn only reads your public GitHub name and profile photo.
+      </p>
+      <button type="button" class="username__back" id="back-to-choose">← Other ways to sign in</button>
+    </form>
   </section>
 </main>
+
   <!-- ==================== END PART 1 · Tai ==================== -->
 
 
