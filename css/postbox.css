@@ -219,3 +219,188 @@
   .moods { margin-right: var(--space-12); gap: 2px; }
   .launch-text { display: none; }   /* only the rocket on small phones */
 }
+Your CSS and your media queries go here. */
+/* =========================================================
+posts.css · the posts under the postbox
+1. The list (spacing, lines, "no posts" message)
+2. One post (avatar, name, text, hashtags, planet counter)
+3. The dashed line joining the avatars
+========================================================= */
+
+/* ---------- The list of posts ---------- */
+
+.feed {
+/* Same width as the postbox: never wider than 622px */
+width: 100%;
+max-width: 622px;
+margin-top: 25px;   /* space between postbox and feed */
+}
+
+.empty-message {
+font: var(--type-07-meta);
+color: var(--text-muted);
+text-align: center;
+padding: var(--space-32);
+}
+
+.post-list {
+list-style: none;   /* removes the bullet points */
+margin: 0;
+padding: 0;
+border-top: 1px solid var(--border-subtle);
+}
+
+
+
+/* ---------- One post ---------- */
+
+/* Each post: avatar on the left, text on the right */
+.post {
+position: relative;   /* lets the dashed line (at the bottom of this file) be placed inside it */
+display: flex;
+gap: 10px;
+padding: var(--space-16) 0 20px;
+border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Reply posts are pushed in */
+.post-reply {
+padding-left: 39px;
+}
+
+
+/* ---------- Avatar: round photo with a purple ring ---------- */
+
+.avatar {
+position: relative;
+z-index: 1;                              /* sits on top of the dashed line */
+box-sizing: border-box;                  /* the 41px includes the border */
+width: 41px;
+height: 41px;
+flex-shrink: 0;                          /* stops it getting squeezed */
+border-radius: 50%;
+object-fit: cover;                       /* crops instead of squashing */
+border: 2px solid var(--surface-space);  /* dark gap between photo and ring */
+outline: 2px solid var(--accent-purple); /* the purple ring */
+background: var(--surface-raised);
+}
+
+
+/* ---------- Text side ---------- */
+
+.post-body {
+flex: 1;          /* takes all the space next to the avatar */
+min-width: 0;
+}
+
+.post-header {
+display: flex;
+align-items: baseline;
+flex-wrap: wrap;
+gap: var(--space-8);
+}
+
+.post-name {
+font: var(--type-05-name);
+color: var(--text-primary);
+}
+
+.post-meta {
+font: var(--type-07-meta);
+color: var(--text-muted);
+}
+
+.post-text {
+margin: 5px 0 0;
+font: var(--type-06-body);
+color: var(--text-body);
+white-space: pre-wrap;       /* keeps line breaks people type */
+overflow-wrap: break-word;   /* wraps very long words */
+}
+
+
+/* ---------- Hashtags ---------- */
+
+.tag-purple { color: var(--accent-purple); }   /* #FED28 */
+.tag-green  { color: var(--accent-green); }    /* #git */
+.tag-blue   { color: var(--accent-blue); }     /* other tags */
+
+/* A tag shown on its own in the footer, like #HELP */
+.tag-label {
+font: var(--type-10-small-bold);
+letter-spacing: 0.03em;
+}
+
+
+/* ---------- Bottom row: tag left, planet + number right ---------- */
+
+.post-footer {
+display: flex;
+align-items: center;
+height: 20px;
+margin-top: 14px;
+}
+
+.orbits {
+display: flex;
+align-items: center;
+gap: 9px;
+margin-left: auto;          /* always pushed to the right */
+font: var(--type-07-meta);
+color: var(--text-muted);
+letter-spacing: 0.1em;
+}
+
+.orbits svg {
+width: 18px;
+height: 18px;
+}
+
+
+/* ---------- The dashed line between avatars ----------
+::before adds an extra drawing to each post without adding HTML.
+It starts under this post's avatar and ends at the next post's avatar. */
+
+.post::before {
+content: "";
+position: absolute;
+top: 61px;          /* just under the avatar */
+bottom: -14px;      /* reaches the top of the next avatar */
+left: 19.5px;       /* middle of the avatar */
+width: 2px;
+background: var(--accent-purple);
+opacity: 0.6;
+/* The mask cuts the line into dashes: 4px visible, 4px hidden, repeating */
+-webkit-mask-image: repeating-linear-gradient(to bottom, #000 0 4px, transparent 4px 8px);
+       mask-image: repeating-linear-gradient(to bottom, #000 0 4px, transparent 4px 8px);
+}
+
+/* Normal post followed by a reply: line slants down to the RIGHT.
+":has(+ .post-reply)" means "a post whose next neighbour is a reply". */
+.post:has(+ .post-reply)::before {
+width: 39px;
+background: linear-gradient(to top right,
+ transparent calc(50% - 1px), var(--accent-purple) calc(50% - 1px),
+ var(--accent-purple) calc(50% + 1px), transparent calc(50% + 1px));
+}
+
+/* Reply followed by a normal post: line slants down to the LEFT */
+.post-reply::before {
+left: 19.5px;
+width: 39px;
+background: linear-gradient(to bottom right,
+ transparent calc(50% - 1px), var(--accent-purple) calc(50% - 1px),
+ var(--accent-purple) calc(50% + 1px), transparent calc(50% + 1px));
+}
+
+/* Reply followed by another reply: straight line, shifted in */
+.post-reply:has(+ .post-reply)::before {
+left: 58.5px;
+width: 2px;
+background: var(--accent-purple);
+}
+
+/* The last post has nobody below it, so no line */
+.post:last-child::before {
+display: none;
+}
