@@ -219,13 +219,6 @@
   .moods { margin-right: var(--space-12); gap: 2px; }
   .launch-text { display: none; }   /* only the rocket on small phones */
 }
-Your CSS and your media queries go here. */
-/* =========================================================
-posts.css · the posts under the postbox
-1. The list (spacing, lines, "no posts" message)
-2. One post (avatar, name, text, hashtags, planet counter)
-3. The dashed line joining the avatars
-========================================================= */
 
 /* ---------- The list of posts ---------- */
 
