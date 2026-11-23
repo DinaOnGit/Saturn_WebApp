@@ -16,6 +16,26 @@ const profileName = document.getElementById("profile-name");
 const profileHandle = document.getElementById("profile-handle");
 const enterBtn = document.getElementById("enter-saturn");
 
+const url = () =>  `https://api.github.com/users/${username}`
+const username = null;
+
+async function findGitUsers()  {
+    try{
+        const response = await fetch(url());
+        if(!response.ok){
+            throw new Error("user not found");
+        }
+
+        const user = await response.json();
+        console.log(user);
+
+    }catch(error){
+        console.error(error.message);
+    }
+} 
+
+findGitUsers(username)
+
 function showUsername() {
     signInActions.hidden = true;
     viewUsername.hidden = false;
@@ -32,6 +52,8 @@ function setFinding(isFinding) {
     findMe.disabled = isFinding;
     findMeSpinner.hidden = !isFinding;
     findMeLabel.textContent = isFinding ? "Finding…" : "Find me";
+
+
 }
 
   
