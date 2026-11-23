@@ -9,7 +9,7 @@ const input = document.getElementById('github-username');
 const findMe = document.getElementById("find-me");
 const findMeLabel = findMe.querySelector(".username__submit-label");
 const findMeSpinner = findMe.querySelector(".username__spinner");
-//find profile
+const usernameNote = document.getElementById("username-note");
 const profileBox = document.getElementById("profile");
 const profileAvatar = document.getElementById("profile-avatar");
 const profileName = document.getElementById("profile-name");
@@ -31,18 +31,19 @@ async function findGitUsers()  {
         }
 
         const user = await response.json();
-        console.log(user);
 
         profileAvatar.src = user.avatar_url;
         profileName.textContent = user.name || user.login;
         profileHandle.textContent = `@${user.login}`;
-
         profileBox.hidden = false;
-        
+        usernameNote.hidden = true;
 
     }catch(error){
         console.error(error.message);
         alert("GitHub user not found. Please check your username.");
+
+    }finally {
+        setFinding(false);
     }
 } 
 
