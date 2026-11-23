@@ -16,12 +16,16 @@ const profileName = document.getElementById("profile-name");
 const profileHandle = document.getElementById("profile-handle");
 const enterBtn = document.getElementById("enter-saturn");
 
-const url = () =>  `https://api.github.com/users/${username}`
-const username = null;
+const url = (username) =>  `https://api.github.com/users/${encodeURIComponent(username)}`
 
 async function findGitUsers()  {
+
+    const userInput = input.value.trim();
+    if(!userInput) return;
+    setFinding(true);
+
     try{
-        const response = await fetch(url());
+        const response = await fetch(url(userInput));
         if(!response.ok){
             throw new Error("user not found");
         }
@@ -29,12 +33,18 @@ async function findGitUsers()  {
         const user = await response.json();
         console.log(user);
 
+        profileAvatar.src = user.avatar_url;
+        profileName.textContent = user.name || user.login;
+        profileHandle.textContent = `@${user.login}`;
+
+        profileBox.hidden = false;
+        
+
     }catch(error){
         console.error(error.message);
+        alert("GitHub user not found. Please check your username.");
     }
 } 
-
-findGitUsers(username)
 
 function showUsername() {
     signInActions.hidden = true;
@@ -52,11 +62,8 @@ function setFinding(isFinding) {
     findMe.disabled = isFinding;
     findMeSpinner.hidden = !isFinding;
     findMeLabel.textContent = isFinding ? "Finding…" : "Find me";
-
-
 }
 
-  
 gitBtn.addEventListener('click', showUsername);
 backToOptions.addEventListener('click', showChoose);
-findMe.addEventListener('click', setFinding);
+findMe.addEventListener('click', findGitUsers);
