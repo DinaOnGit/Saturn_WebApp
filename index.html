@@ -81,6 +81,17 @@
          data-default="Saturn only reads your public GitHub name and profile photo.">
         Saturn only reads your public GitHub name and profile photo.
       </p>
+
+      <div class="profile" id="profile" hidden>
+        <img class="profile__avatar" id="profile-avatar" alt="" width="48" height="48">
+        <div class="profile__text">
+          <p class="profile__name" id="profile-name"></p>
+          <p class="profile__handle" id="profile-handle"></p>
+        </div>
+        <button type="button" class="profile__not-me" id="not-me">Not me</button>
+      </div>
+      <button type="button" class="username__enter" id="enter-saturn" hidden></button>
+      
       <button type="button" class="username__back" id="back-to-choose">← Other ways to sign in</button>
     </form>
   </section>
