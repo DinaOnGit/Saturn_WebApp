@@ -1,2 +1,221 @@
 /* postbox.css · Part 3 · Faryal · Post box
    Your CSS and your media queries go here. */
+   /* =========================================================
+   postbox.css · the box where you WRITE a post
+   ("Posting as…", text area, counter, moods, Launch)
+
+   Colours, fonts and spacing all come from base.css.
+   var(--name) means "use the value called --name from base.css".
+   ========================================================= */
+
+/* ---------- Where your part sits on the page ----------
+   The design is 964px wide in the middle of the screen:
+   your column (622px) on the left, a 32px gap, then Top tags (310px).
+
+   margin-left works out how far in to start:
+   (screen width - 964px) / 2 = the empty space on each side.
+   max() makes sure it's never closer than 16px to the edge. */
+.postbox-column {
+  box-sizing: content-box;
+  width: 100%;
+  max-width: 622px;
+  margin-top: var(--space-24);   /* space under the top bar */
+  margin-left: max(var(--space-16), calc((100% - 964px) / 2));
+}
+
+/* Tablets and phones: no room for Top tags beside it, so centre it */
+@media (max-width: 1000px) {
+  .postbox-column {
+    box-sizing: border-box;
+    max-width: calc(622px + 2 * var(--space-16));   /* 622px + the padding */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-16);
+  }
+}
+
+
+/* Width includes padding and border, so sizes add up the way you expect.
+   Only for the postbox, so it can't change anyone else's part. */
+.postbox,
+.postbox * {
+  box-sizing: border-box;
+}
+
+.postbox {
+  /* Fixed size from the design: never wider than 622px */
+  width: 100%;
+  max-width: 622px;
+
+  /* Gradient border trick: two backgrounds.
+     The first fills the inside, the second only shows in the 1px border. */
+  border: 1px solid transparent;
+  border-radius: var(--radius-16);
+  background:
+    linear-gradient(var(--surface-card), var(--surface-card)) padding-box,
+    linear-gradient(165deg,
+      rgb(116 207 150 / .35),     /* green, top left */
+      var(--border-default) 50%,  /* plain edge in the middle */
+      rgb(246 166 114 / .35))     /* orange, bottom right */
+      border-box;
+  padding: var(--space-16) var(--space-16) 20px;
+  /* Soft purple glow underneath */
+  box-shadow: 0 24px 40px -18px rgb(183 156 255 / .25);
+}
+
+
+/* ---------- "Posting as Jane Bond" row ---------- */
+
+.postbox-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  height: 24px;
+}
+
+.postbox-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postbox-user-text {
+  margin: 0;
+  font: var(--type-07-meta);
+  color: var(--text-muted);
+}
+
+.postbox-user-text strong {
+  font: var(--type-05-name);
+  color: var(--text-primary);
+}
+
+
+/* ---------- The writing area ---------- */
+
+.postbox-textarea {
+  display: block;
+  width: 100%;
+  height: 66px;
+  margin-top: var(--space-16);
+  padding: 0 0 var(--space-16);
+  background: transparent;                       /* blends into the card */
+  border: none;
+  border-bottom: 1px solid var(--border-subtle); /* the divider line */
+  color: var(--text-body);
+  font: var(--type-03-large-input);
+  resize: none;
+}
+
+.postbox-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.postbox-textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent-purple);     /* purple = focus colour */
+}
+
+
+/* ---------- Bottom row: counter, moods, Launch ---------- */
+
+.postbox-footer {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  margin-top: 15px;
+}
+
+.char-count {
+  font: var(--type-07-meta);
+  color: var(--text-muted);
+  margin-right: auto;   /* "take all the free space" = pushes the rest right */
+}
+
+/* The emoji mood buttons */
+.moods {
+  display: flex;
+  gap: 7px;
+  margin-right: var(--space-24);
+}
+
+.mood {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 17px;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.mood:hover {
+  transform: scale(1.15);
+  background: var(--surface-raised);
+}
+
+/* JavaScript will add this class to the mood someone picks */
+.mood.is-selected {
+  background: rgb(183 156 255 / .25);
+}
+
+/* Keyboard users see a purple ring when they Tab to a button */
+.mood:focus-visible,
+.launch:focus-visible .launch-icon {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+/* The Launch button */
+.launch {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font: var(--type-08-button);
+  cursor: pointer;
+}
+
+.launch:focus-visible {
+  outline: none;   /* the ring goes on the orange circle instead */
+}
+
+.launch-icon {
+  display: grid;
+  place-items: center;   /* centres the rocket inside the circle */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  color: var(--ink-on-orange);
+  box-shadow: 0 0 0 3px var(--border-strong);   /* dark ring around the circle */
+  transition: transform 0.15s;
+}
+
+.launch-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.launch:hover .launch-icon {
+  transform: rotate(-12deg) scale(1.05);
+}
+
+/* JavaScript can disable it when the box is empty */
+.launch:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ---------- Small phones ---------- */
+@media (max-width: 520px) {
+  .moods { margin-right: var(--space-12); gap: 2px; }
+  .launch-text { display: none; }   /* only the rocket on small phones */
+}
