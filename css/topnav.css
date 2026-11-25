@@ -1,2 +1,162 @@
 /* topnav.css · Part 2 · Abdullah · Top nav
    Your CSS and your media queries go here. */
+#topnav .hidden {
+  display: none !important;
+}
+
+/* Main top bar */
+#topnav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+  background: #0d1117;
+  border-bottom: 1px solid #222a35;
+  color: white;
+  font-family: "Onest", Arial, sans-serif;
+}
+
+#topnav .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#topnav .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Search  button */
+#topnav .search-button {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #2a3240;
+  background: #12161d;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* search bar */
+#topnav .search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 360px;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 26px;
+  border: 1px solid #2a3240;
+  background: #12161d;
+}
+
+#topnav .search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 16px;
+}
+
+#topnav .close-button {
+  border: none;
+  background: none;
+  color: #8b95a3;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Feed status */
+#topnav .status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8b95a3;
+  font-size: 16px;
+}
+
+#topnav .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #74cf96;
+}
+
+/* Account button */
+#topnav .account {
+  position: relative;
+}
+
+#topnav .account-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 16px 0 6px;
+  border-radius: 26px;
+  border: 2px solid #b79cff;
+  background: #12161d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#topnav .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#topnav .dropdown {
+  position: absolute;
+  top: 64px;
+  right: 0;
+  width: 260px;
+  padding: 24px;
+  text-align: center;
+  background: #12161d;
+  border: 1px solid #2a3240;
+  border-radius: 16px;
+  z-index: 100;
+}
+
+#topnav .avatar-big {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#topnav .dropdown h3 {
+  margin: 12px 0 4px;
+  font-size: 20px;
+}
+
+#topnav .dropdown p {
+  margin: 0 0 20px;
+  color: #8b95a3;
+  font-size: 14px;
+}
+
+#topnav .disconnect-button {
+  width: 100%;
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid #2a3240;
+  background: #1a202b;
+  color: #f29aae;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
