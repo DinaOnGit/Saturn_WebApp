@@ -24,7 +24,7 @@
 }
 
 /* Tablets and phones: no room for Top tags beside it, so centre it */
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
   .postbox-column {
     box-sizing: border-box;
     max-width: calc(622px + 2 * var(--space-16));   /* 622px + the padding */
@@ -149,7 +149,7 @@
   border-radius: 50%;
   font-size: 17px;
   cursor: pointer;
-  transition: transform 0.15s, background 0.15s;
+  transition: transform 0.15s;
 }
 
 .mood:hover {
@@ -215,7 +215,7 @@
 
 
 /* ---------- Small phones ---------- */
-@media (max-width: 520px) {
+@media (max-width: 639px) {
   .moods { margin-right: var(--space-12); gap: 2px; }
   .launch-text { display: none; }   /* only the rocket on small phones */
 }
