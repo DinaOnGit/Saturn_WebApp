@@ -67,4 +67,6 @@ function setFinding(isFinding) {
 
 gitBtn.addEventListener('click', showUsername);
 backToOptions.addEventListener('click', showChoose);
-findMe.addEventListener('click', findGitUsers);
+viewUsername.addEventListener('submit', (e) => { e.preventDefault(); findGitUsers(); });
+
+
