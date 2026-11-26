@@ -15,6 +15,7 @@ const profileAvatar = document.getElementById("profile-avatar");
 const profileName = document.getElementById("profile-name");
 const profileHandle = document.getElementById("profile-handle");
 const enterBtn = document.getElementById("enter-saturn");
+const notMeBtn = document.getElementById("not-me");
 
 const url = (username) =>  `https://api.github.com/users/${encodeURIComponent(username)}`
 
@@ -68,5 +69,8 @@ function setFinding(isFinding) {
 gitBtn.addEventListener('click', showUsername);
 backToOptions.addEventListener('click', showChoose);
 viewUsername.addEventListener('submit', (e) => { e.preventDefault(); findGitUsers(); });
-
+notMeBtn.addEventListener('click', () =>{
+    profileBox.hidden = true;
+    input.focus();
+});
 

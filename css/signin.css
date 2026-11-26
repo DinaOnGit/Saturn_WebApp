@@ -1,6 +1,9 @@
 /* signin.css · Part 1 · Tai · Sign-in and its states
    Your CSS and your media queries go here. */
-    .signin-page {
+   
+   *, *::before, *::after { box-sizing: border-box; }
+   
+   .signin-page {
       min-height: 100vh;
       display: grid;
       place-items: center;
@@ -10,7 +13,6 @@
     #signin {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       width: 100%;
       max-width: 478px;
       padding: 34px 34px 30px;
@@ -37,7 +39,7 @@
       color: var(--text-primary);
     }
     .signin_tagline {
-      margin: 0 0 8px;
+      margin: 0 0 18px;
       font-weight: 700;
       font-size: 17px;
       line-height: 22px;
@@ -54,7 +56,7 @@
     .signin_actions {
       display: flex;
       flex-direction: column;
-      gap: var(--space-12);
+      gap: var(--space-16);
       width: 100%;
 
     } .signin_actions[hidden]{
@@ -126,6 +128,7 @@
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-12);
       transition: border-color 0.15s ease;
+      margin-bottom: 12px;
     }
     .username__field:focus-within { border-color: var(--accent-orange); }
     .username__field.is-error { border-color: #e5484d; }
@@ -159,7 +162,6 @@
       align-items: center;
       gap: 14px;
       width: 100%;
-      margin-top: 18px;
       padding: var(--space-12) 14px;
       background: var(--surface-space);
       border: 1px solid var(--border-strong);
@@ -194,6 +196,10 @@
       line-height: 22.5px;
       color: var(--accent-orange);
       cursor: pointer;
+    }
+
+    .username__back{
+      margin-top: 12px;
     }
     .profile__not-me { flex: none; }
     .profile__not-me:hover { text-decoration: underline; }
@@ -245,7 +251,7 @@
     .username__spinner { flex: none; width: 20px; height: 20px; }
 
     .username__note {
-      margin: 18px 0 18px;
+      margin: 12px 0 12px;
       font-size: 15px;
       line-height: 22.5px;
       color: var(--text-muted);
