@@ -13,6 +13,7 @@
     #signin {
       display: flex;
       flex-direction: column;
+      gap: 18px;
       width: 100%;
       max-width: 478px;
       padding: 34px 34px 30px;
@@ -31,7 +32,7 @@
     }
     
     .signin_title {
-      margin: 0 0 18px;
+      margin: 0;
       font-weight: 800;
       font-size: 31px;
       line-height: 36px;
@@ -39,14 +40,14 @@
       color: var(--text-primary);
     }
     .signin_tagline {
-      margin: 0 0 18px;
+      margin: 0;
       font-weight: 700;
       font-size: 17px;
       line-height: 22px;
       color: var(--text-primary);
     }
     .signin_meta {
-      margin: 0 0 18px;
+      margin: 0;
       font-weight: 400;
       font-size: 15px;
       line-height: 20px;
@@ -56,7 +57,7 @@
     .signin_actions {
       display: flex;
       flex-direction: column;
-      gap: var(--space-16);
+      gap: var(--space-12);
       width: 100%;
 
     } .signin_actions[hidden]{
