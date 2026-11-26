@@ -1,2 +1,84 @@
-/* tags.css · Part 4 · Dina · Top tags today and the tag pills
-   Your CSS and your media queries go here. */
+/* tags.css · Part 4 · Dina · Top tags today and the tag pills */
+
+/* ---------- The card ---------- */
+#top-tags {
+	width: 320px;
+	display: flex;
+	flex-direction: column; /* title, orbit and note stack top to bottom */
+	gap: var(--space-16); /* space between them */
+	padding: var(--space-16);
+	background: var(--surface-card);
+	border: 1px solid var(--border-default);
+	border-radius: var(--radius-16);
+}
+
+/* ---------- The title ---------- */
+#top-tags-title {
+	margin: 0; /* remove the browser's default space around h2 */
+	font: var(--type-02-heading);
+	color: var(--text-primary);
+}
+
+/* ---------- The orbit box (holds the rings and Saturn) ---------- */
+.orbit {
+	position: relative; /* the rings and Saturn are placed inside this box */
+	width: 250px;
+	height: 250px;
+	margin: 0 auto; /* centre the box in the card */
+}
+
+/* ---------- The rings ---------- */
+.ring {
+	position: absolute; /* stack all rings on top of each other */
+	top: 50%;
+	left: 50%;
+	transform: translate(
+		-50%,
+		-50%
+	); /* move each ring so its centre is the box's centre */
+	border: 1px dashed rgb(201 209 220 / 0.14); /* text-soft at 14%: faint dashed line */
+	border-radius: 50%; /* square → circle */
+}
+
+.ring-1 {
+	width: 108px;
+	height: 108px;
+} /* small */
+.ring-2 {
+	width: 172px;
+	height: 172px;
+} /* middle */
+.ring-3 {
+	width: 236px;
+	height: 236px;
+} /* big */
+
+/* ---------- Saturn in the middle ---------- */
+.saturn {
+	position: absolute; /* same centring as the rings */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 62px;
+	height: 62px;
+	display: grid;
+	place-items: center; /* centre the logo inside the button */
+	padding: 0;
+	background: var(--surface-card); /* hides the rings behind Saturn */
+	border: 1.5px solid var(--accent-orange); /* the orange ring around Saturn */
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+/* Keyboard users see where they are */
+.saturn:focus-visible {
+	outline: 2px solid var(--accent-purple);
+	outline-offset: 3px;
+}
+
+/* ---------- The note ---------- */
+.top-tags-note {
+	margin: 0;
+	font: var(--type-09-small);
+	color: var(--text-muted);
+}
