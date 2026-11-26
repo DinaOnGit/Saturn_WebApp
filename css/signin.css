@@ -102,6 +102,20 @@
     .btn__text { display: flex; flex-direction: column; gap: 2px; }
     .btn__title { font-weight: 700; font-size: 15px; line-height: 22.5px; }
     .btn__sub { font-weight: 400; font-size: 13px; line-height: 19.5px; opacity: 0.8; }
+    .btn-enter{
+      background: #F6A672;
+      color: #160B04;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 0;
+      height: 50px;
+      font-size: 16px;
+      margin-top: 6px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+}
+
     
     /* ---- GitHub username view ---- */
   
