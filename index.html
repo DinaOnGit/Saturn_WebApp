@@ -33,7 +33,7 @@
        css/signin.css + js/signin.js
        Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-4
        ========================================================= -->
-<section class="signin-page">
+<section class="signin-page open">
   <div id="signin">
     <!-- Tai: your HTML here -->
      
@@ -103,186 +103,189 @@
        css/topnav.css + js/topnav.js
        Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=2038-786
        ========================================================= -->
-  <header id="topnav">
-    <!-- Abdullah: your HTML here -->
-  </header>
-  <!-- ==================== END PART 2 · Abdullah ==================== -->
-
-
-  <main>
-
-    <section id="postbox-input">
-<div class="postbox-column">
-
-  <!-- ========== PART 1: THE POSTBOX (where you write) ========== -->
-      <section class="postbox">
-        <form id="post-form">
-
-          <!-- "Posting as Jane Bond" row -->
-          <div class="postbox-user">
-            <!-- Swap the src for your team's real avatar image -->
-            <img class="postbox-avatar" src="https://i.pravatar.cc/80?img=47" alt="">
-            <p class="postbox-user-text">Posting as <strong id="current-user">Jane Bond</strong></p>
-          </div>
-
-          <!-- The writing area -->
-          <textarea
-            id="post-text"
-            class="postbox-textarea"
-            placeholder="What's happening in orbit?"
-            maxlength="280"
-            aria-label="Write your post"
-          ></textarea>
-
-          <div class="postbox-footer">
-            <!-- JavaScript will update this number later -->
-            <span id="char-count" class="char-count">0 / 280</span>
-
-            <!-- Mood buttons. type="button" stops them from sending the form -->
-            <div class="moods">
-              <button type="button" class="mood" data-mood="😊" aria-label="Happy">😊</button>
-              <button type="button" class="mood" data-mood="😐" aria-label="Neutral">😐</button>
-              <button type="button" class="mood" data-mood="😤" aria-label="Frustrated">😤</button>
-              <button type="button" class="mood" data-mood="🤪" aria-label="Silly">🤪</button>
+  <div class="page">
+    <header id="topnav">
+      <!-- Abdullah: your HTML here -->
+    </header>
+    <!-- ==================== END PART 2 · Abdullah ==================== -->
+  
+  
+    <main>
+  
+      <section id="postbox-input">
+  <div class="postbox-column">
+  
+    <!-- ========== PART 1: THE POSTBOX (where you write) ========== -->
+        <section class="postbox">
+          <form id="post-form">
+  
+            <!-- "Posting as Jane Bond" row -->
+            <div class="postbox-user">
+              <!-- Swap the src for your team's real avatar image -->
+              <img class="postbox-avatar" src="https://i.pravatar.cc/80?img=47" alt="">
+              <p class="postbox-user-text">Posting as <strong id="current-user">Jane Bond</strong></p>
             </div>
-
-            <!-- The Launch button: text + orange round rocket -->
-            <button type="submit" id="post-button" class="launch">
-              <span class="launch-text">Launch</span>
-              <span class="launch-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                  <path d="m12 15-3-3a22 22 0 0 1 2-3.950A12.880 12.880 0 0 1 22 2c0 2.720-.780 7.500-6 11a22.350 22.350 0 0 1-4 2z"/>
-                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                  <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                </svg>
-              </span>
-            </button>
-          </div>
-
-        </form>
-      </section>
-
-
-      <!-- ========== PART 2: THE FEED (posts that have been posted) ========== -->
-      <section class="feed">
-
-        <!-- Shown when there are no posts yet. JavaScript will show/hide it later. -->
-        <p id="empty-message" class="empty-message" hidden>No posts yet. Be the first to launch one.</p>
-
-        <!-- JavaScript will put new posts inside this list -->
-        <ul id="post-list" class="post-list">
-
-          <!-- EXAMPLE POSTS: only here so you can see the styling.
-               Delete them once JavaScript is adding real posts. -->
-
-          <li class="post">
-            <img class="avatar" src="https://i.pravatar.cc/120?img=45" alt="">
-            <div class="post-body">
-              <div class="post-header">
-                <span class="post-name">Maja L.</span>
-                <span class="post-meta">@maja-l · 3 min · 😊</span>
+  
+            <!-- The writing area -->
+            <textarea
+              id="post-text"
+              class="postbox-textarea"
+              placeholder="What's happening in orbit?"
+              maxlength="280"
+              aria-label="Write your post"
+            ></textarea>
+  
+            <div class="postbox-footer">
+              <!-- JavaScript will update this number later -->
+              <span id="char-count" class="char-count">0 / 280</span>
+  
+              <!-- Mood buttons. type="button" stops them from sending the form -->
+              <div class="moods">
+                <button type="button" class="mood" data-mood="😊" aria-label="Happy">😊</button>
+                <button type="button" class="mood" data-mood="😐" aria-label="Neutral">😐</button>
+                <button type="button" class="mood" data-mood="😤" aria-label="Frustrated">😤</button>
+                <button type="button" class="mood" data-mood="🤪" aria-label="Silly">🤪</button>
               </div>
-              <p class="post-text">Finally got GET /api/chirps rendering in our own cards. Async/await clicked for me today <span class="tag tag-purple">#FED28</span></p>
-              <div class="post-footer">
-                <span class="orbits">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <circle cx="12" cy="12" r="5"/>
-                    <ellipse cx="12" cy="12" rx="10.500" ry="3.500" transform="rotate(-20 12 12)"/>
+  
+              <!-- The Launch button: text + orange round rocket -->
+              <button type="submit" id="post-button" class="launch">
+                <span class="launch-text">Launch</span>
+                <span class="launch-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                    <path d="m12 15-3-3a22 22 0 0 1 2-3.950A12.880 12.880 0 0 1 22 2c0 2.720-.780 7.500-6 11a22.350 22.350 0 0 1-4 2z"/>
+                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
                   </svg>
-                  12
                 </span>
-              </div>
+              </button>
             </div>
-          </li>
-
-          <!-- "post-reply" pushes this one in a bit, like in the design -->
-          <li class="post post-reply">
-            <img class="avatar" src="https://i.pravatar.cc/120?img=47" alt="">
-            <div class="post-body">
-              <div class="post-header">
-                <span class="post-name">Jane Bond</span>
-                <span class="post-meta">@jane-bond · 26 min · 🤪</span>
+  
+          </form>
+        </section>
+  
+  
+        <!-- ========== PART 2: THE FEED (posts that have been posted) ========== -->
+        <section class="feed">
+  
+          <!-- Shown when there are no posts yet. JavaScript will show/hide it later. -->
+          <p id="empty-message" class="empty-message" hidden>No posts yet. Be the first to launch one.</p>
+  
+          <!-- JavaScript will put new posts inside this list -->
+          <ul id="post-list" class="post-list">
+  
+            <!-- EXAMPLE POSTS: only here so you can see the styling.
+                 Delete them once JavaScript is adding real posts. -->
+  
+            <li class="post">
+              <img class="avatar" src="https://i.pravatar.cc/120?img=45" alt="">
+              <div class="post-body">
+                <div class="post-header">
+                  <span class="post-name">Maja L.</span>
+                  <span class="post-meta">@maja-l · 3 min · 😊</span>
+                </div>
+                <p class="post-text">Finally got GET /api/chirps rendering in our own cards. Async/await clicked for me today <span class="tag tag-purple">#FED28</span></p>
+                <div class="post-footer">
+                  <span class="orbits">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="5"/>
+                      <ellipse cx="12" cy="12" rx="10.500" ry="3.500" transform="rotate(-20 12 12)"/>
+                    </svg>
+                    12
+                  </span>
+                </div>
               </div>
-              <p class="post-text">Merged to main at 23:58. No regrets. Some regrets. <span class="tag tag-green">#git</span></p>
-              <div class="post-footer">
-                <span class="orbits">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <circle cx="12" cy="12" r="5"/>
-                    <ellipse cx="12" cy="12" rx="10.500" ry="3.500" transform="rotate(-20 12 12)"/>
-                  </svg>
-                  21
-                </span>
+            </li>
+  
+            <!-- "post-reply" pushes this one in a bit, like in the design -->
+            <li class="post post-reply">
+              <img class="avatar" src="https://i.pravatar.cc/120?img=47" alt="">
+              <div class="post-body">
+                <div class="post-header">
+                  <span class="post-name">Jane Bond</span>
+                  <span class="post-meta">@jane-bond · 26 min · 🤪</span>
+                </div>
+                <p class="post-text">Merged to main at 23:58. No regrets. Some regrets. <span class="tag tag-green">#git</span></p>
+                <div class="post-footer">
+                  <span class="orbits">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="5"/>
+                      <ellipse cx="12" cy="12" rx="10.500" ry="3.500" transform="rotate(-20 12 12)"/>
+                    </svg>
+                    21
+                  </span>
+                </div>
               </div>
-            </div>
-          </li>
-
-          <li class="post">
-            <img class="avatar" src="https://i.pravatar.cc/120?img=44" alt="">
-            <div class="post-body">
-              <div class="post-header">
-                <span class="post-name">Noor K.</span>
-                <span class="post-meta">@noor-k · 41 min · 😤</span>
+            </li>
+  
+            <li class="post">
+              <img class="avatar" src="https://i.pravatar.cc/120?img=44" alt="">
+              <div class="post-body">
+                <div class="post-header">
+                  <span class="post-name">Noor K.</span>
+                  <span class="post-meta">@noor-k · 41 min · 😤</span>
+                </div>
+                <p class="post-text">Anyone else getting a 400 when posting without a name? It says author_name is required.</p>
+                <div class="post-footer">
+                  <!-- A tag that sits on its own, bottom left -->
+                  <span class="tag tag-blue tag-label">#HELP</span>
+                  <span class="orbits">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="5"/>
+                      <ellipse cx="12" cy="12" rx="10.500" ry="3.500" transform="rotate(-20 12 12)"/>
+                    </svg>
+                    3
+                  </span>
+                </div>
               </div>
-              <p class="post-text">Anyone else getting a 400 when posting without a name? It says author_name is required.</p>
-              <div class="post-footer">
-                <!-- A tag that sits on its own, bottom left -->
-                <span class="tag tag-blue tag-label">#HELP</span>
-                <span class="orbits">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <circle cx="12" cy="12" r="5"/>
-                    <ellipse cx="12" cy="12" rx="10.500" ry="3.500" transform="rotate(-20 12 12)"/>
-                  </svg>
-                  3
-                </span>
-              </div>
-            </div>
-          </li>
-
-        </ul>
+            </li>
+  
+          </ul>
+        </section>
+  
+  </div>
+  
+      <!-- =========================================================
+           PART 4 · TOP TAGS TODAY (orbit card + tag pills) · Dina
+           css/tags.css + js/tags.js
+           Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=66-22
+           ========================================================= -->
+       <section id="top-tags">
+        <!-- Dina: your HTML here -->
+        <h2 id="top-tags-title">Top tags today</h2>
+      
+        <!-- THE ORBIT: a 250 × 250 px box. Everything inside is stacked in the middle. -->
+        <div class="orbit">
+          <!-- THE RINGS: three empty divs that CSS turns into dashed circles -->
+          <div class="ring ring-1"></div> <!-- small,  108 px -->
+          <div class="ring ring-2"></div> <!-- middle, 172 px -->
+          <div class="ring ring-3"></div> <!-- big,    236 px -->
+      
+          <!-- SATURN in the middle: a button that will show all posts again -->
+          <button type="button" class="saturn">
+          <img src="images/saturn-logo.svg" alt="Show all posts" width="44" height="44">
+          </button>
+        </div>
+      
+        <p class="top-tags-note">Point at the orbit to pause it, and click a moon to filter.</p>
+        </section>
+      <!-- ==================== END TOP TAGS · Dina ==================== -->
+  
+  
+      <!-- =========================================================
+           PART 4 · FEED STATES: LOADING, ERROR, EMPTY · Dina
+           css/feed.css + js/feed.js
+           Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-20
+           ========================================================= -->
+      <section id="feed-state">
+        <!-- Dina: your HTML here -->
       </section>
-
-</div>
-
-    <!-- =========================================================
-         PART 4 · TOP TAGS TODAY (orbit card + tag pills) · Dina
-         css/tags.css + js/tags.js
-         Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=66-22
-         ========================================================= -->
-     <section id="top-tags">
-      <!-- Dina: your HTML here -->
-      <h2 id="top-tags-title">Top tags today</h2>
-    
-      <!-- THE ORBIT: a 250 × 250 px box. Everything inside is stacked in the middle. -->
-      <div class="orbit">
-        <!-- THE RINGS: three empty divs that CSS turns into dashed circles -->
-        <div class="ring ring-1"></div> <!-- small,  108 px -->
-        <div class="ring ring-2"></div> <!-- middle, 172 px -->
-        <div class="ring ring-3"></div> <!-- big,    236 px -->
-    
-        <!-- SATURN in the middle: a button that will show all posts again -->
-        <button type="button" class="saturn">
-        <img src="images/saturn-logo.svg" alt="Show all posts" width="44" height="44">
-        </button>
-      </div>
-    
-      <p class="top-tags-note">Point at the orbit to pause it, and click a moon to filter.</p>
-      </section>
-    <!-- ==================== END TOP TAGS · Dina ==================== -->
-
-
-    <!-- =========================================================
-         PART 4 · FEED STATES: LOADING, ERROR, EMPTY · Dina
-         css/feed.css + js/feed.js
-         Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-20
-         ========================================================= -->
-    <section id="feed-state">
-      <!-- Dina: your HTML here -->
-    </section>
-    <!-- ==================== END FEED STATES · Dina ==================== -->
-
-    <section id="posts">
-  </main>
+      <!-- ==================== END FEED STATES · Dina ==================== -->
+  
+      <section id="posts">
+    </main>
+  
+  </div>
 
 </body>
 </html>
