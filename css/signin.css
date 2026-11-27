@@ -3,12 +3,23 @@
    
    *, *::before, *::after { box-sizing: border-box; }
    
-   .signin-page {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px 16px;
-    }
+   /* ---------- The modal (the <dialog id="modal-signin">) ---------- */
+  #modal-signin {
+    width: min(478px, calc(100% - 32px));
+    max-width: none;
+    padding: 0;
+    border: 0;
+    background: transparent;   /* the card inside draws its own background */
+    color: var(--text-primary);
+    overflow: visible;
+  }
+
+  #modal-signin::backdrop {
+    background: rgba(5, 7, 10, 0.7);
+    backdrop-filter: blur(6px);
+  }
+
+body:has(#modal-signin[open]) { overflow: hidden; }
     
     #signin {
       display: flex;
@@ -81,6 +92,7 @@
       cursor: pointer;
       transition: filter 0.15s ease, transform 0.05s ease, border-color 0.15s ease;
     }
+
     .btn:active { transform: translateY(1px); }
     .btn:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
     
@@ -117,7 +129,6 @@
       cursor: pointer;
 }
 
-    
     /* ---- GitHub username view ---- */
   
     .username[hidden], .welcome-card__actions[hidden] { display: none; }
