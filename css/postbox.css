@@ -256,9 +256,9 @@ padding: var(--space-16) 0 20px;
 border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Reply posts are pushed in */
+/* Reply posts stay on the same left edge as the other posts */
 .post-reply {
-padding-left: 39px;
+padding-left: 0;
 }
 
 
