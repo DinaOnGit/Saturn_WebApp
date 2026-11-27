@@ -8,33 +8,6 @@
    var(--name) means "use the value called --name from base.css".
    ========================================================= */
 
-/* ---------- Where your part sits on the page ----------
-   The design is 964px wide in the middle of the screen:
-   your column (622px) on the left, a 32px gap, then Top tags (310px).
-
-   margin-left works out how far in to start:
-   (screen width - 964px) / 2 = the empty space on each side.
-   max() makes sure it's never closer than 16px to the edge. */
-.postbox-column {
-  box-sizing: content-box;
-  width: 100%;
-  max-width: 622px;
-  margin-top: var(--space-24);   /* space under the top bar */
-  margin-left: max(var(--space-16), calc((100% - 964px) / 2));
-}
-
-/* Tablets and phones: no room for Top tags beside it, so centre it */
-@media (max-width: 999px) {
-  .postbox-column {
-    box-sizing: border-box;
-    max-width: calc(622px + 2 * var(--space-16));   /* 622px + the padding */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 var(--space-16);
-  }
-}
-
-
 /* Width includes padding and border, so sizes add up the way you expect.
    Only for the postbox, so it can't change anyone else's part. */
 .postbox,

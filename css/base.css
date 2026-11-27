@@ -94,6 +94,7 @@ main {
 #top-tags {
   grid-column: 2;
   grid-row: 1 / span 3;
+  align-self: start;
 }
 
 /* Tablet and phone: one column */
