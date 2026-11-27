@@ -1,51 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Saturn</title>
-    <link rel="icon" href="images/saturn-logo.svg" type="image/svg+xml" />
-
-    <!-- Font: Onest -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700;800&display=swap"
-    />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/base.css" />
-    <!-- Everyone -->
-    <link rel="stylesheet" href="css/signin.css" />
-    <!-- Tai -->
-    <link rel="stylesheet" href="css/topnav.css" />
-    <!-- Abdullah -->
-    <link rel="stylesheet" href="css/postbox.css" />
-    <!-- Faryal -->
-    <link rel="stylesheet" href="css/posts.css" />
-    <!-- Faryal -->
-    <link rel="stylesheet" href="css/tags.css" />
-    <!-- Dina -->
-    <link rel="stylesheet" href="css/feed.css" />
-    <!-- Dina -->
-
-    <!-- JavaScript -->
-    <script type="module" src="js/signin.js"></script>
-    <!-- Tai -->
-    <script type="module" src="js/topnav.js"></script>
-    <!-- Abdullah -->
-    <script type="module" src="js/postbox.js"></script>
-    <!-- Faryal -->
-    <script type="module" src="js/posts.js"></script>
-    <!-- Faryal -->
-    <script type="module" src="js/tags.js"></script>
-    <!-- Dina -->
-    <script type="module" src="js/feed.js"></script>
-    <!-- Dina -->
-  </head>
-  <body>
-    <!-- =========================================================
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,130 +33,6 @@
        css/signin.css + js/signin.js
        Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-4
        ========================================================= -->
-    <section id="signin">
-      <!-- Tai: your HTML here -->
-    </section>
-    <!-- ==================== END PART 1 · Tai ==================== -->
-
-    <!-- =========================================================
-       PART 2 · TOP NAV · Abdullah
-       css/topnav.css + js/topnav.js
-       Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=2038-786
-       ========================================================= -->
-    <header id="topnav">
-      <div class="navbar">
-        <!-- Left Logo and Title -->
-        <div class="logo">
-          <img
-            src="images/saturn-logo.svg"
-            width="44"
-            height="44"
-            alt="Saturn logo"
-          />
-          <span>Saturn</span>
-        </div>
-
-        <!-- Right Search,Status, and Account -->
-        <div class="right">
-          <!-- Search Icon (visible at start) -->
-          <button id="searchButton" class="search-button" type="button">
-            🔍
-          </button>
-
-          <!-- Search Bar (hidden until search icon is clicked) -->
-          <div id="searchBox" class="search-box hidden">
-            <span>🔍</span>
-            <input
-              id="searchInput"
-              type="text"
-              placeholder="Search posts or #tags"
-            />
-            <button id="searchClose" class="close-button" type="button">
-              ✕
-            </button>
-          </div>
-
-          <!-- Status -->
-          <div class="status">
-            <span class="dot"></span>
-            <span>Feed online</span>
-          </div>
-
-          <!-- Account Button and Dropdown -->
-          <div class="account">
-            <button id="accountButton" class="account-button" type="button">
-              <img
-                src="images/sample-avatar-jane.jpg"
-                class="avatar"
-                alt="Jane Bond"
-              />
-              <span>Jane Bond ▾</span>
-            </button>
-
-            <div id="dropdown" class="dropdown hidden">
-              <img
-                src="images/sample-avatar-jane.jpg"
-                class="avatar-big"
-                alt="Jane Bond"
-              />
-              <h3>Jane Bond</h3>
-              <p>@jane-bond</p>
-              <button
-                id="disconnectButton"
-                class="disconnect-button"
-                type="button"
-              >
-                Disconnect GitHub
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- ==================== END PART 2 · Abdullah ==================== -->
-
-    <main>
-      <!-- =========================================================
-         PART 3 · POST BOX · Faryal
-         css/postbox.css + js/postbox.js
-         Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=66-2
-         ========================================================= -->
-      <section id="postbox">
-        <!-- Faryal: your HTML here -->
-      </section>
-      <!-- ==================== END POST BOX · Faryal ==================== -->
-
-      <!-- =========================================================
-         PART 4 · TOP TAGS TODAY (orbit card + tag pills) · Dina
-         css/tags.css + js/tags.js
-         Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=66-22
-         ========================================================= -->
-      <section id="top-tags">
-        <!-- Dina: your HTML here -->
-      </section>
-      <!-- ==================== END TOP TAGS · Dina ==================== -->
-
-      <!-- =========================================================
-         PART 4 · FEED STATES: LOADING, ERROR, EMPTY · Dina
-         css/feed.css + js/feed.js
-         Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-20
-         ========================================================= -->
-      <section id="feed-state">
-        <!-- Dina: your HTML here -->
-      </section>
-      <!-- ==================== END FEED STATES · Dina ==================== -->
-
-      <!-- =========================================================
-         PART 3 · POSTS AND NEW POSTS · Faryal
-         css/posts.css + js/posts.js
-         Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=2043-380
-         ========================================================= -->
-      <section id="posts">
-        <!-- Faryal: your HTML here -->
-      </section>
-      <!-- ==================== END POSTS · Faryal ==================== -->
-    </main>
-  </body>
 <section class="signin-page open">
   <div id="signin">
     <!-- Tai: your HTML here -->
@@ -275,7 +105,74 @@
        ========================================================= -->
   <div class="page">
     <header id="topnav">
-      <!-- Abdullah: your HTML here -->
+      <div class="navbar">
+        <!-- Left Logo and Title -->
+        <div class="logo">
+          <img
+            src="images/saturn-logo.svg"
+            width="44"
+            height="44"
+            alt="Saturn logo"
+          />
+          <span>Saturn</span>
+        </div>
+
+        <!-- Right Search,Status, and Account -->
+        <div class="right">
+          <!-- Search Icon (visible at start) -->
+          <button id="searchButton" class="search-button" type="button">
+            🔍
+          </button>
+
+          <!-- Search Bar (hidden until search icon is clicked) -->
+          <div id="searchBox" class="search-box hidden">
+            <span>🔍</span>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search posts or #tags"
+            />
+            <button id="searchClose" class="close-button" type="button">
+              ✕
+            </button>
+          </div>
+
+          <!-- Status -->
+          <div class="status">
+            <span class="dot"></span>
+            <span>Feed online</span>
+          </div>
+
+          <!-- Account Button and Dropdown -->
+          <div class="account">
+            <button id="accountButton" class="account-button" type="button">
+              <img
+                src="images/sample-avatar-jane.jpg"
+                class="avatar"
+                alt="Jane Bond"
+              />
+              <span>Jane Bond ▾</span>
+            </button>
+
+            <div id="dropdown" class="dropdown hidden">
+              <img
+                src="images/sample-avatar-jane.jpg"
+                class="avatar-big"
+                alt="Jane Bond"
+              />
+              <h3>Jane Bond</h3>
+              <p>@jane-bond</p>
+              <button
+                id="disconnectButton"
+                class="disconnect-button"
+                type="button"
+              >
+                Disconnect GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- ==================== END PART 2 · Abdullah ==================== -->
   
@@ -367,8 +264,7 @@
               </div>
             </li>
   
-            <!-- "post-reply" pushes this one in a bit, like in the design -->
-            <li class="post post-reply">
+            <li class="post">
               <img class="avatar" src="https://i.pravatar.cc/120?img=47" alt="">
               <div class="post-body">
                 <div class="post-header">
@@ -414,6 +310,7 @@
         </section>
   
   </div>
+      </section>
   
       <!-- =========================================================
            PART 4 · TOP TAGS TODAY (orbit card + tag pills) · Dina
@@ -453,6 +350,7 @@
       <!-- ==================== END FEED STATES · Dina ==================== -->
   
       <section id="posts">
+      </section>
     </main>
   
   </div>
