@@ -12,11 +12,13 @@
     background: transparent;   /* the card inside draws its own background */
     color: var(--text-primary);
     overflow: visible;
+
   }
 
   #modal-signin::backdrop {
     background: rgba(5, 7, 10, 0.7);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(10px);
+    background-image: url("../images/saturn-stars.svg")
   }
 
 body:has(#modal-signin[open]) { overflow: hidden; }
