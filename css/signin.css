@@ -16,7 +16,7 @@
   }
 
   #modal-signin::backdrop {
-    background: rgba(5, 7, 10, 0.7);
+    background: var(--surface-space);
     backdrop-filter: blur(10px);
     background-image: url("../images/saturn-stars.svg")
   }
