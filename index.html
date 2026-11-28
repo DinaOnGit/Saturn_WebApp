@@ -33,67 +33,70 @@
        css/signin.css + js/signin.js
        Figma: https://www.figma.com/design/Hzs0J7b7mb54IQt1WeAd8m/Saturn?node-id=12-4
        ========================================================= -->
-<section class="signin-page open">
-  <div id="signin">
-    <!-- Tai: your HTML here -->
-     
-    <img class="signin-saturn" src="images/saturn-logo-animated.svg" alt="Saturn">
-    
-      <h1 class="signin_title">Welcome to Saturn</h1>
-      <p class="signin_tagline">The class feed of tomorrow.</p>
-      <p class="signin_meta">Sign in to read, post and like with the class.</p>
+<dialog id="modal-signin" aria-labelledby="welcome-title">
+  <section class="signin-page open">
+    <div id="signin">
+      <!-- Tai: your HTML here -->
+      
+      <img class="signin-saturn" src="images/saturn-logo-animated.svg" alt="Saturn">
+      
+        <h1 class="signin_title">Welcome to Saturn</h1>
+        <p class="signin_tagline">The class feed of tomorrow.</p>
+        <p class="signin_meta">Sign in to read, post and like with the class.</p>
 
-    <div class="signin_actions">
-      <button type="button" class="btn btn--primary" id="github-signin">
-        <img class="btn__icon" alt="github icon" src="images/icon-github.svg">
-        <span class="btn__text">
-          <span class="btn__title">Connect your GitHub</span>
-          <span class="btn__sub">Use your GitHub name and photo</span>
-        </span>
-      </button>
-
-      <button type="button" class="btn btn--secondary" id="anonymous-signin">
-        <img class="btn__icon" alt="Anonymous icon" src="images/icon-anonymous.svg">
-        <span class="btn__text">
-          <span class="btn__title">Post anonymously</span>
-          <span class="btn__sub">No name or photo, just Anonymous</span>
-        </span>
-      </button>
-    </div>
-
-    <!-- View 2: GitHub username -->
-    <form class="username" id="view-username" hidden novalidate>
-      <label class="username__label" for="github-username">GitHub username</label>
-      <div class="username__field">
-        <span class="username__prefix">github.com/</span>
-        <input class="username__input" id="github-username" name="username" type="text"
-               autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"
-               maxlength="39" aria-describedby="username-note">
-        <button type="submit" class="username__submit" id="find-me">
-          <img class="username__spinner" src="images/saturn-loader.svg" alt="" width="20" height="20" hidden>
-          <span class="username__submit-label">Find me</span>
+      <div class="signin_actions">
+        <button type="button" class="btn btn--primary" id="github-signin">
+          <img class="btn__icon" alt="github icon" src="images/icon-github.svg">
+          <span class="btn__text">
+            <span class="btn__title">Connect your GitHub</span>
+            <span class="btn__sub">Use your GitHub name and photo</span>
+          </span>
         </button>
 
+        <button type="button" class="btn btn--secondary" id="anonymous-signin">
+          <img class="btn__icon" alt="Anonymous icon" src="images/icon-anonymous.svg">
+          <span class="btn__text">
+            <span class="btn__title">Post anonymously</span>
+            <span class="btn__sub">No name or photo, just Anonymous</span>
+          </span>
+        </button>
       </div>
-      <p class="username__note" id="username-note" aria-live="polite"
-         data-default="Saturn only reads your public GitHub name and profile photo.">
-        Saturn only reads your public GitHub name and profile photo.
-      </p>
+    
 
-      <div class="profile" id="profile" hidden>
-        <img class="profile__avatar" id="profile-avatar" alt="" width="48" height="48">
-        <div class="profile__text">
-          <p class="profile__name" id="profile-name"></p>
-          <p class="profile__handle" id="profile-handle"></p>
+      <!-- View 2: GitHub username -->
+      <form class="username" id="view-username" hidden novalidate>
+        <label class="username__label" for="github-username">GitHub username</label>
+        <div class="username__field">
+          <span class="username__prefix">github.com/</span>
+          <input class="username__input" id="github-username" name="username" type="text"
+                autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"
+                maxlength="39" aria-describedby="username-note">
+          <button type="submit" class="username__submit" id="find-me">
+            <img class="username__spinner" src="images/saturn-loader.svg" alt="" width="20" height="20" hidden>
+            <span class="username__submit-label">Find me</span>
+          </button>
+
         </div>
-        <button type="button" class="profile__not-me" id="not-me">Not me</button>
-      </div>
-      <button type="button" class="username__enter" id="enter-saturn" hidden>Enter Saturn as <span id="user-name-insert"></span></button>
-      
-      <button type="button" class="username__back" id="back-to-choose">← Other ways to sign in</button>
-    </form>
-  </div>
-</section>
+        <p class="username__note" id="username-note" aria-live="polite"
+          data-default="Saturn only reads your public GitHub name and profile photo.">
+          Saturn only reads your public GitHub name and profile photo.
+        </p>
+
+        <div class="profile" id="profile" hidden>
+          <img class="profile__avatar" id="profile-avatar" alt="" width="48" height="48">
+          <div class="profile__text">
+            <p class="profile__name" id="profile-name"></p>
+            <p class="profile__handle" id="profile-handle"></p>
+          </div>
+          <button type="button" class="profile__not-me" id="not-me">Not me</button>
+        </div>
+        <button type="button" class="username__enter" id="enter-saturn" hidden>Enter Saturn as <span id="user-name-insert"></span></button>
+        
+        <button type="button" class="username__back" id="back-to-choose">← Other ways to sign in</button>
+      </form>
+    </div>
+  </section>
+</dialog>
 
   <!-- ==================== END PART 1 · Tai ==================== -->
 
