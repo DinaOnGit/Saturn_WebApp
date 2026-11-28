@@ -2,7 +2,9 @@
 
 /* ---------- The card ---------- */
 #top-tags {
+	box-sizing: border-box; /* the 320px now includes the padding and border */
 	width: 320px;
+	align-self: start; /* in the page grid: only as tall as its content */
 	display: flex;
 	flex-direction: column; /* title, orbit and note stack top to bottom */
 	gap: var(--space-16); /* space between them */
@@ -39,19 +41,71 @@
 	border: 1px dashed rgb(201 209 220 / 0.14); /* text-soft at 14%: faint dashed line */
 	border-radius: 50%; /* square → circle */
 }
+/* Rings: % of the orbit box, so they grow and shrink with it */
+.ring-1 { width: 54%; height: 54%; }
+.ring-2 { width: 74%; height: 74%; }
+.ring-3 { width: 94%; height: 94%; }
 
-.ring-1 {
-	width: 108px;
-	height: 108px;
-} /* small */
-.ring-2 {
-	width: 172px;
-	height: 172px;
-} /* middle */
-.ring-3 {
-	width: 236px;
-	height: 236px;
-} /* big */
+/* ---------- The plates (hula hoops): invisible, same size as the rings ---------- */
+.plate {
+	position: absolute;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center; /* moon goes to the middle (left ↔ right) */
+	align-items: flex-start; /* moon goes to the top */
+}
+.plate-1 { width: 54%; height: 54%; top: 23%; left: 23%; }
+.plate-2 { width: 74%; height: 74%; top: 13%; left: 13%; }
+.plate-3 { width: 94%; height: 94%; top: 3%;  left: 3%;  }
+
+/* ---------- The moons: round coloured buttons ---------- */
+.moon {
+	position: relative; /* so its tag can hang under it */
+	width: 16px;
+	height: 16px;
+	margin-top: -8px; /* lift by half its size, so its middle sits on the ring */
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.moon-purple { background: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple); }
+.moon-green  { background: var(--accent-green);  box-shadow: 0 0 10px var(--accent-green); }
+.moon-blue   { background: var(--accent-blue);   box-shadow: 0 0 10px var(--accent-blue); }
+.moon:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 3px; }
+
+/* ---------- The name tags: hang under their moon ---------- */
+.moon-tag {
+	position: absolute; /* hangs under the moon without making it bigger */
+	top: 20px; /* 16px moon + 4px gap */
+	left: -22px; /* (16 − 60) ÷ 2, so it's centred under the moon */
+	width: 60px;
+	text-align: center;
+	font: var(--type-10-small-bold);
+	color: var(--text-soft);
+}
+
+/* ---------- The movement: a Ferris wheel ---------- */
+@keyframes spin {
+	to { transform: rotate(360deg); } /* one full turn */
+}
+
+/* All 3 hoops turn at the same speed, so the moons never catch up with each other */
+.plate { animation: spin 30s linear infinite; }
+.plate:hover { animation-play-state: paused; }
+/* The moons turn back just as fast, so their tags stay upright */
+.moon { animation: spin 30s linear infinite reverse; }
+
+/* Start them a third of a lap apart: 10 and 20 of 30 seconds */
+.plate-2, .plate-2 .moon { animation-delay: -10s; }
+.plate-3, .plate-3 .moon { animation-delay: -20s; }
+
+/* Mouse on the orbit: all plates AND all moons pause together, so nothing gets out of step */
+.orbit:hover .plate,
+.orbit:hover .moon { animation-play-state: paused; }
+
+.plate { pointer-events: none; } /* invisible plates: the mouse goes straight through them */
+.moon  { pointer-events: auto; } /* but the moons can still be pointed at and clicked */
 
 /* ---------- Saturn in the middle ---------- */
 .saturn {
